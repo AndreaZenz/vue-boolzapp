@@ -12,17 +12,17 @@ var app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: '01/10/2020 15:30:55',
                         message: 'Hai portato a spasso il cane?',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '01/10/2020 15:50:00',
                         message: 'Ricordati di dargli da mangiare',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 16:15:22',
+                        date: '01/10/2020 16:15:22',
                         message: 'Tutto fatto!',
                         status: 'received'
                     }
@@ -33,17 +33,17 @@ var app = new Vue({
                 avatar: '_2',
                 visible: true,
                 messages: [{
-                    date: '20/03/2020 16:30:00',
+                    date: '03/20/2020 16:30:00',
                     message: 'Ciao come stai?',
                     status: 'sent'
                 },
                 {
-                    date: '20/03/2020 16:30:55',
+                    date: '03/20/2020 16:30:55',
                     message: 'Bene grazie! Stasera ci vediamo?',
                     status: 'received'
                 },
                 {
-                    date: '20/03/2020 16:35:00',
+                    date: '03/20/2020 16:35:00',
                     message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                     status: 'received'
                 }
@@ -54,17 +54,17 @@ var app = new Vue({
                 avatar: '_3',
                 visible: true,
                 messages: [{
-                    date: '28/03/2020 10:10:40',
+                    date: '03/20/2020 10:10:40',
                     message: 'La Marianna va in campagna',
                     status: 'received'
                 },
                 {
-                    date: '28/03/2020 10:20:10',
+                    date: '03/28/2020 10:20:10',
                     message: 'Sicuro di non aver sbagliato chat?',
                     status: 'sent'
                 },
                 {
-                    date: '28/03/2020 16:15:22',
+                    date: '03/28/2020 16:15:22',
                     message: 'Ah scusa!',
                     status: 'received'
                 }
@@ -75,12 +75,12 @@ var app = new Vue({
                 avatar: '_6',
                 visible: true,
                 messages: [{
-                    date: '10/01/2020 15:30:55',
+                    date: '01/10/2020 15:30:55',
                     message: 'Lo sai che ha aperto una nuova pizzeria?',
                     status: 'sent'
                 },
                 {
-                    date: '10/01/2020 15:50:00',
+                    date: '01/10/2020 15:50:00',
                     message: 'Si, ma preferirei andare al cinema',
                     status: 'received'
                 }
@@ -92,17 +92,17 @@ var app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: '01/10/2020 15:30:55',
                         message: 'Hai portato a spasso il cane?',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '01/10/2020 15:50:00',
                         message: 'Ricordati di dargli da mangiare',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 16:15:22',
+                        date: '01/10/2020 16:15:22',
                         message: 'Tutto fatto!',
                         status: 'received'
                     }
@@ -114,17 +114,17 @@ var app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: '01/10/2020 15:30:55',
                         message: 'Hai portato a spasso il cane?',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '01/10/2020 15:50:00',
                         message: 'Ricordati di dargli da mangiare',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 16:15:22',
+                        date: '01/10/2020 16:15:22',
                         message: 'Tutto fatto!',
                         status: 'received'
                     }
@@ -136,17 +136,17 @@ var app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: '01/10/2020 15:30:55',
                         message: 'Hai portato a spasso il cane?',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '01/10/2020 15:50:00',
                         message: 'Ricordati di dargli da mangiare',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 16:15:22',
+                        date: '01/10/2020 16:15:22',
                         message: 'Tutto fatto!',
                         status: 'received'
                     }
@@ -158,17 +158,17 @@ var app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: '01/10/2020 15:30:55',
                         message: 'Hai portato a spasso il cane?',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '01/10/2020 15:50:00',
                         message: 'Ricordati di dargli da mangiare',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 16:15:22',
+                        date: '01/10/2020 16:15:22',
                         message: 'Tutto fatto!',
                         status: 'received'
                     }
@@ -180,17 +180,17 @@ var app = new Vue({
                 visible: true,
                 messages: [
                     {
-                        date: '10/01/2020 15:30:55',
+                        date: '01/10/2020 15:30:55',
                         message: 'Hai portato a spasso il cane?',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 15:50:00',
+                        date: '01/10/2020 15:50:00',
                         message: 'Ricordati di dargli da mangiare',
                         status: 'sent'
                     },
                     {
-                        date: '10/01/2020 16:15:22',
+                        date: '01/10/2020 16:15:22',
                         message: 'Tutto fatto!',
                         status: 'received'
                     }
@@ -199,10 +199,10 @@ var app = new Vue({
         ],
         activeUser: 0,
         searchInput: "",
-        newMessage:"",
+        newMessage: "",
     },
     methods: {
-        
+
         //funzione che classifica un messaggio in base al suo thi.status e lo stampa a schermo tramite l'indice 
         getMessageClass(index) {
             let thisContact = this.contacts[this.activeUser];
@@ -215,14 +215,9 @@ var app = new Vue({
             this.activeUser = index;
         },
 
-        formatTime(stringDate){
-            return moment(stringDate, "DD/MM/YYYY HH:mm:ss"  ).format('MM:hh')
+        formatTime(date) {
+            return moment(date).format('hh:mm');
         },
-        
-        pushNewMessage(){
-            /*this.activeuser.message.push(@keyup.enter="nuovo messaggio")*/
-        },
-
         //Funzione che filtra i nostri contatti in base allo stato di element.visible, collegato ad un v-if nell'html per mostrare o no il contatto nella nostra lista laterale
         filterContacts() {
             this.contacts.forEach((element) => {
@@ -233,16 +228,21 @@ var app = new Vue({
                 }
             });
         },
-
         //creiamo una funzione che, collegata ad un event listener invia quanto scritto stampandolo
-        messageSending(){
+        messageSending() {
             this.contacts[this.activeUser].messages.push({
                 message: this.newMessage,
-                date : moment().format('hh:mm'),
+                date: moment().format('DD MM YYYY hh:mm:ss'),
                 status: 'sent'
             });
             this.newMessage = '';
-        }
-
+            setTimeout(() => {
+                this.contacts[this.activeUser].messages.push({
+                    message: 'ok',
+                    date: moment().format('DD MM YYYY hh:mm:ss'),
+                    status: 'received'
+                });
+            }, 1000);
+        },
     }
-},)
+})
