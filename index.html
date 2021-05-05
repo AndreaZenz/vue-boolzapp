@@ -42,19 +42,20 @@
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </label>
                 <input id="contacts-filter" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat"
-                    name="search" v-model='searchText' @input='onInput'>
+                    name="search" v-model='searchText' @keyup="filterContacts">
             </div>
             <div class="contacts">
-                <div v-for="(contact, index) in contacts"
-                    :class="(index === activeUser) ? 'contact active' : 'contact'"
-                    @click="setActiveConversation(index)">
+                <div v-for="(contact, index) in contacts" :class="(index === activeUser) ? 'contact active' : 'contact'"
+                    @click="currentConversation(index)" v-if="contact.visible">
                     <div class="contact-logo">
                         <img :src="'imgs/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                     </div>
                     <div class="contact-info">
                         <h3>
                             <span class="contact-name">{{contact.name}}</span>
-                            <span class="time f-right"></span>
+                            <span class="time f-right">
+
+                            </span>
                         </h3>
                         <small></small>
                     </div>
@@ -66,8 +67,7 @@
         <div class="right">
             <div class="header-right">
                 <div class="header-right-logo">
-                    <img :src="'imgs/avatar' + contacts[activeUser].avatar + '.jpg'"
-                        :alt="contacts[activeUser].name">
+                    <img :src="'imgs/avatar' + contacts[activeUser].avatar + '.jpg'" :alt="contacts[activeUser].name">
                     <h3><span id="header-right-contact-name">{{contacts[activeUser].name}}</span> <br> <small
                             class="time">Ultimo accesso oggi alle </small></h3>
                 </div>
@@ -79,11 +79,11 @@
             </div>
             <div class="right-messages-container">
                 <div class="right-messages">
+                    <!-- Div che crea tutti i messaggi classificandoli tramite la key status e gli asseglia la classe received or sent in base all'argomento della chiave -->
                     <div v-for="(message, index) in contacts[activeUser].messages" :class='getMessageClass(index)'>
                         <span class="message-text">{{message.message}}</span>
                         <span class="message-time"> {{message.date}}
                         </span>
-                        <i class="fa fa-chevron-down f-right message-options"></i>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,6 @@
                 </div>
             </div>
         </div>
-        <!-- /contenitore dx -->
     </div>
     <!-- contenitore di destra -->
     <script src="script/script.js"></script>

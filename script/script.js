@@ -198,26 +198,26 @@ var app = new Vue({
             },
         ],
         activeUser: 0,
-        searchText: '',
-    },
-    mounted() {
+        searchText: ''
     },
     computed:{
-        selectedUserLastAccess(){
-            const receivedMsg = this.activeUser.messages.filter((msg) => msg.status == 'received' )
-            const lastMsgDate = receivedMsg[receivedMsg.length - 1].date
+        // selectedUserLastAccess(){
+        //     const receivedMsg = this.activeUser.messages.filter((msg) => msg.status == 'received' )
+        //     const lastMsgDate = receivedMsg[receivedMsg.length - 1].date
 
-            return this.formatTime(lastMsgDate)
-        }
+        //     return this.formatTime(lastMsgDate)
+        // }
     },
     methods: {
+        //funzione che classifica un messaggio in base al suo thi.status e lo stampa a schermo tramite l'indice 
         getMessageClass(index) {
             let thisContact = this.contacts[this.activeUser];
             let messageClass = 'message ' + thisContact.messages[index].status;
             return messageClass;
         },
-        setActiveConversation(index) {
-            //rendiamo visibili i messaggi di un contatto
+
+        //funzione che rende visibile il contatto con i messaggi tramite l'index
+        currentConversation(index) {
             this.activeUser = index;
         },
         formatTime(stringDate){
@@ -226,8 +226,17 @@ var app = new Vue({
         pushNewMessage(){
             /*this.activeuser.message.push(@keyup.enter="nuovo messaggio")*/
         },
-        onInput(){
-            console.log('ciao')
+
+        //Funzione che filtra i nostri contatti in base allo stato di element.visible, collegato ad un v-if nell'html per mostrare o no il contatto nella nostra lista laterale
+        filterContacts() {
+            let self = this;
+            this.contacts.forEach((element) => {
+                if (element.name.toLowerCase().includes(self.searchText.toLowerCase())) {
+                    element.visible = true;
+                } else {
+                    element.visible = false;
+                }
+            });
         }
 
     }
