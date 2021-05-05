@@ -42,11 +42,11 @@
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </label>
                 <input id="contacts-filter" class="left-searchbar-input" placeholder="Cerca o inizia una nuova chat"
-                    name="search">
+                    name="search" v-model='searchText' @input='onInput'>
             </div>
             <div class="contacts">
                 <div v-for="(contact, index) in contacts"
-                    :class="(index === contactActive) ? 'contact active' : 'contact'"
+                    :class="(index === activeUser) ? 'contact active' : 'contact'"
                     @click="setActiveConversation(index)">
                     <div class="contact-logo">
                         <img :src="'imgs/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
@@ -66,12 +66,12 @@
         <div class="right">
             <div class="header-right">
                 <div class="header-right-logo">
-                    <img :src="'imgs/avatar' + contacts[contactActive].avatar + '.jpg'"
-                        :alt="contacts[contactActive].name">
-                    <h3><span id="header-right-contact-name">{{contacts[contactActive].name}}</span> <br> <small
+                    <img :src="'imgs/avatar' + contacts[activeUser].avatar + '.jpg'"
+                        :alt="contacts[activeUser].name">
+                    <h3><span id="header-right-contact-name">{{contacts[activeUser].name}}</span> <br> <small
                             class="time">Ultimo accesso oggi alle </small></h3>
                 </div>
-                <div class="header-right-icons">
+                <div class="main-right-icons">
                     <i class="fas fa-search"></i>
                     <i class="fas fa-paperclip"></i>
                     <i class="fas fa-ellipsis-v"></i>
@@ -79,7 +79,7 @@
             </div>
             <div class="right-messages-container">
                 <div class="right-messages">
-                    <div v-for="(message, index) in contacts[contactActive].messages" :class='getMessageClass(index)'>
+                    <div v-for="(message, index) in contacts[activeUser].messages" :class='getMessageClass(index)'>
                         <span class="message-text">{{message.message}}</span>
                         <span class="message-time"> {{message.date}}
                         </span>

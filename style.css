@@ -248,7 +248,7 @@ body {
     background: #EAEAEA;
 }
 
-.header-right .header-right-logo, .header-right .header-right-icons {
+.header-right .header-right-logo, .header-right .main-right-icons {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -267,14 +267,14 @@ body {
     float: left;
 }
 
-.header-right .header-right-icons {
+.header-right .main-right-icons {
     float: right;
     width: auto;
     margin-right: 15px;
     text-align: right;
 }
 
-.header-right .header-right-icons i {
+.header-right .main-right-icons i {
     margin: auto 10px;
     color: rgb(177, 177, 177);
     font-size: 22px;

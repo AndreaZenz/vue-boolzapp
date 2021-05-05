@@ -197,19 +197,38 @@ var app = new Vue({
                 ],
             },
         ],
-        contactActive: 0,
+        activeUser: 0,
+        searchText: '',
     },
     mounted() {
     },
+    computed:{
+        selectedUserLastAccess(){
+            const receivedMsg = this.activeUser.messages.filter((msg) => msg.status == 'received' )
+            const lastMsgDate = receivedMsg[receivedMsg.length - 1].date
+
+            return this.formatTime(lastMsgDate)
+        }
+    },
     methods: {
         getMessageClass(index) {
-            let thisContact = this.contacts[this.contactActive];
+            let thisContact = this.contacts[this.activeUser];
             let messageClass = 'message ' + thisContact.messages[index].status;
             return messageClass;
         },
         setActiveConversation(index) {
             //rendiamo visibili i messaggi di un contatto
-            this.contactActive = index;
+            this.activeUser = index;
         },
+        formatTime(stringDate){
+            return moment(stringDate, "DD/MM/YYYY HH:mm:ss"  ).format('MM:hh')
+        },
+        pushNewMessage(){
+            /*this.activeuser.message.push(@keyup.enter="nuovo messaggio")*/
+        },
+        onInput(){
+            console.log('ciao')
+        }
+
     }
 },)
