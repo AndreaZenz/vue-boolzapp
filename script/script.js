@@ -198,17 +198,11 @@ var app = new Vue({
             },
         ],
         activeUser: 0,
-        searchText: ''
-    },
-    computed:{
-        // selectedUserLastAccess(){
-        //     const receivedMsg = this.activeUser.messages.filter((msg) => msg.status == 'received' )
-        //     const lastMsgDate = receivedMsg[receivedMsg.length - 1].date
-
-        //     return this.formatTime(lastMsgDate)
-        // }
+        searchInput: "",
+        newMessage:"",
     },
     methods: {
+        
         //funzione che classifica un messaggio in base al suo thi.status e lo stampa a schermo tramite l'indice 
         getMessageClass(index) {
             let thisContact = this.contacts[this.activeUser];
@@ -220,23 +214,34 @@ var app = new Vue({
         currentConversation(index) {
             this.activeUser = index;
         },
+
         formatTime(stringDate){
             return moment(stringDate, "DD/MM/YYYY HH:mm:ss"  ).format('MM:hh')
         },
+        
         pushNewMessage(){
             /*this.activeuser.message.push(@keyup.enter="nuovo messaggio")*/
         },
 
         //Funzione che filtra i nostri contatti in base allo stato di element.visible, collegato ad un v-if nell'html per mostrare o no il contatto nella nostra lista laterale
         filterContacts() {
-            let self = this;
             this.contacts.forEach((element) => {
-                if (element.name.toLowerCase().includes(self.searchText.toLowerCase())) {
+                if (element.name.toLowerCase().includes(this.searchInput.toLowerCase())) {
                     element.visible = true;
                 } else {
                     element.visible = false;
                 }
             });
+        },
+
+        //creiamo una funzione che, collegata ad un event listener invia quanto scritto stampandolo
+        messageSending(){
+            this.contacts[this.activeUser].messages.push({
+                message: this.newMessage,
+                date : moment().format('hh:mm'),
+                status: 'sent'
+            });
+            this.newMessage = '';
         }
 
     }
