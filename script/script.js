@@ -200,6 +200,10 @@ var app = new Vue({
         activeUser: 0,
         searchInput: "",
         newMessage: "",
+        messageActive: {
+            index: false,
+            show: false
+        },
     },
     methods: {
 
@@ -212,12 +216,37 @@ var app = new Vue({
         getMessageClass(index) {
             let thisContact = this.contacts[this.activeUser];
             let messageClass = 'message ' + thisContact.messages[index].status;
+            if (this.messageActive.show && this.messageActive.index === index) { //per non sovrapporre messaggi con la tendina
+                messageClass += ' z-index-100';
+            }
             return messageClass;
         },
 
         //funzione che rende visibile il contatto con i messaggi tramite l'index
         currentConversation(index) {
+            if (this.messageActive.index !== false) { //sistemiamo le opzioni
+                this.messageActive.show = false;
+                this.messageActive.index = false;
+            }
             this.activeUser = index;
+        },
+
+        //funzione che mostra le opzioni di un messaggio
+        showOption(index) {
+            if (this.messageActive.index !== false && this.messageActive.index !== index) {
+                this.messageActive.show = false;
+                this.messageActive.index = false;
+            }
+            this.messageActive.show = (this.messageActive.show) ? false : true;
+            this.messageActive.index = index;
+        },
+
+        //funzione che cancella un messaggio eliminandolo dall'array
+        messageCancel(index) {
+            this.contacts[this.activeUser].messages.splice(index, 1);
+        
+            this.messageActive.show = false;
+            this.messageActive.index = false;
         },
 
         formatTime(date) {
@@ -247,7 +276,7 @@ var app = new Vue({
             setTimeout(() => {
                 this.contacts[this.activeUser].messages.push({
                     message: 'Ok!',
-                    date: moment().format('hh:mm'),
+                    date: moment().format('DD/MM/YYYY hh:mm:ss'),
                     status: 'received'
                 });
             }, 1000);

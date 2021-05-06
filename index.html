@@ -85,8 +85,12 @@
                     <!-- Div che crea tutti i messaggi classificandoli tramite la key status e gli asseglia la classe received or sent in base all'argomento della chiave -->
                     <div v-for="(message, index) in contacts[activeUser].messages" :class='getMessageClass(index)'>
                         <span class="message-text">{{message.message}}</span>
-                        <span class="message-time"> {{formatTime(message.date)}}
-                        </span>
+                        <span class="message-time"> {{formatTime(message.date)}}</span>
+                        <i class="fa fa-chevron-down f-right message-options" @click="showOption(index)"></i>
+                        <div class="message-options-panel" v-if="messageActive.show && messageActive.index === index">
+                            <div class="info">Info messaggio</div>
+                            <div class="delete" @click="messageCancel(index)">Cancella messaggio</div>
+                        </div>
                     </div>
                 </div>
             </div>
