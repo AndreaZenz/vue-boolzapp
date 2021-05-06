@@ -203,6 +203,11 @@ var app = new Vue({
     },
     methods: {
 
+        getLastData(index) {
+            //prendiamo la data dell'ultimo messaggio
+            return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+        },
+
         //funzione che classifica un messaggio in base al suo thi.status e lo stampa a schermo tramite l'indice 
         getMessageClass(index) {
             let thisContact = this.contacts[this.activeUser];
@@ -218,9 +223,11 @@ var app = new Vue({
         formatTime(date) {
             return moment(date).format('hh:mm');
         },
+
         //Funzione che filtra i nostri contatti in base allo stato di element.visible, collegato ad un v-if nell'html per mostrare o no il contatto nella nostra lista laterale
         filterContacts() {
             this.contacts.forEach((element) => {
+                // if (element.name.toLowerCase().startsOf(this.searchInput.toLowerCase()))
                 if (element.name.toLowerCase().includes(this.searchInput.toLowerCase())) {
                     element.visible = true;
                 } else {
@@ -228,18 +235,19 @@ var app = new Vue({
                 }
             });
         },
+
         //creiamo una funzione che, collegata ad un event listener invia quanto scritto stampandolo
         messageSending() {
             this.contacts[this.activeUser].messages.push({
                 message: this.newMessage,
-                date: moment().format('DD MM YYYY hh:mm:ss'),
+                date: moment().format('DD/MM/YYYY hh:mm:ss'),
                 status: 'sent'
             });
             this.newMessage = '';
             setTimeout(() => {
                 this.contacts[this.activeUser].messages.push({
-                    message: 'ok',
-                    date: moment().format('DD MM YYYY hh:mm:ss'),
+                    message: 'Ok!',
+                    date: moment().format('hh:mm'),
                     status: 'received'
                 });
             }, 1000);
