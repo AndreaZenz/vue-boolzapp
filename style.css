@@ -403,3 +403,7 @@ body {
     font-size: 25px;
     color: #6B7376;
 }
+
+.block{
+    display: block;
+}

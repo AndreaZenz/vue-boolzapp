@@ -209,6 +209,13 @@ var app = new Vue({
 
         getLastData(index) {
             //prendiamo la data dell'ultimo messaggio
+            // if(messages.length === 0){
+            //     return 
+            // }
+            if(this.contacts[index].messages.length === 0){
+                return 
+            }
+
             return this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
         },
 
@@ -252,7 +259,6 @@ var app = new Vue({
         formatTime(date) {
             return moment(date).format('hh:mm');
         },
-
         //Funzione che filtra i nostri contatti in base allo stato di element.visible, collegato ad un v-if nell'html per mostrare o no il contatto nella nostra lista laterale
         filterContacts() {
             this.contacts.forEach((element) => {
@@ -281,5 +287,19 @@ var app = new Vue({
                 });
             }, 1000);
         },
+        // getLastMsgString(messages){
+        //     if(messages.length === 0){
+        //         return "Nessun messaggio disponibile"
+        //     }
+        //     const lastMsg = messages[message.length - 1];
+
+        //     const trimmedMsg = lastMsg.text.slice(0 , 20) + "..."
+
+        //     const formattedDate = this.formatTime(lastMsg.date)
+
+        //     return trimmedMsg + " - " + formattedDate
+
+
+        // }
     }
 })
